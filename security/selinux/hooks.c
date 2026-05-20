@@ -109,11 +109,12 @@ int selinux_enforcing = 0;
 
 static int __init enforcing_setup(char *str)
 {
-	/*
+	// To hardcode the enforcing mode to 0, comment out the following lines and set selinux_enforcing to 0.
 	unsigned long enforcing;
 	if (!strict_strtoul(str, 0, &enforcing))
 		selinux_enforcing = enforcing ? 1 : 0;
-	*/
+	
+	
 	return 1;
 }
 __setup("enforcing=", enforcing_setup);

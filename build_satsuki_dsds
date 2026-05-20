@@ -1,9 +1,10 @@
 mkdir -p out
+compile2
 make2 mrproper
 make2 O=out mrproper
-export KBULID_DIFFCONFIG=satsuki_dsds_diffconfig
+export KBUILD_DIFFCONFIG=satsuki_dsds_diffconfig
 make2 O=out kitakami_defconfig
 
-sed -i '/CONFIG_SECURITY_SONY_RIC/d' .config
-echo "# CONFIG_SECURITY_SONY_RIC is not set" >> .config
+sed -i '/CONFIG_SECURITY_SONY_RIC/d' out/.config
+echo "# CONFIG_SECURITY_SONY_RIC is not set" >> out/.config
 make2 O=out -j$(nproc)
