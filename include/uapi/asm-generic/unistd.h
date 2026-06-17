@@ -705,7 +705,7 @@ __SYSCALL(__NR_renameat2, sys_renameat2)
 __SYSCALL(__NR_seccomp, sys_seccomp)
 
 #undef __NR_syscalls
-#define __NR_syscalls 278
+#define __NR_syscalls 384
 
 /*
  * All syscalls below here should go away really,
